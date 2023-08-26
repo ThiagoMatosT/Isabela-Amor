@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    background-color: #f7e7e7; /* Cor de fundo romântica */
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  #button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .button {
+    background-color: #ffcccc; /* Cor do botão */
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  
+  #no-button:hover {
+    animation: shake 0.5s infinite;
+  }
+  
+  @keyframes shake {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-10px);
+    }
+  }
+</style>
+</head>
+<body>
+  <h1>Você me ama?</h1>
+  <div id="button-container">
+    <button id="yes-button" class="button">Sim</button>
+    <button id="no-button" class="button">Não</button>
+  </div>
+
+  <script>
+    document.getElementById("yes-button").addEventListener("click", function() {
+      // Redirecionar para a página de confirmação
+      window.location.href = "pagina_de_confirmação.html";
+    });
+
+    document.getElementById("no-button").addEventListener("mouseover", function() {
+      // Mover o botão "Não" infinitamente quando o cursor passar por cima
+      this.style.animation = "shake 0.5s infinite";
+    });
+
+    document.getElementById("no-button").addEventListener("mouseout", function() {
+      // Parar a animação quando o cursor sair do botão "Não"
+      this.style.animation = "none";
+    });
+  </script>
+</body>
+</html>
